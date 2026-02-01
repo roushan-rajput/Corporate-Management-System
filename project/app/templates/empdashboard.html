@@ -145,10 +145,11 @@
         <!-- Query -->
         <div id="query" class="section card">
             <h3>Raise a Query</h3>
-            <form method="POST">
+            <form method="POST" action="{% url 'emp_query' %}">
                 {% csrf_token %}
+                <input type="text" name="title" placeholder="Query Title" required>
                 <textarea name="query" placeholder="Write your issue or query here..."></textarea>
-                <button type="submit">Submit Query</button>
+                <button type="submit">Send Query</button>
             </form>
         </div>
 
@@ -162,7 +163,6 @@
             document.getElementById(id).classList.add('active');
         }
     </script>
-
 </body>
 
 </html>

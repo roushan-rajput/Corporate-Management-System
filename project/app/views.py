@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import employee
+from .models import employee , Query
 # from .models import passwordrest
 import random
 from django.core.mail import send_mail
@@ -80,13 +80,11 @@ def login_data(req):
 
         if e == 'roushanrajput12362@gmail.com' and p == '12362':
             return render(req, 'admindashboard.html')
-
-        emp = employee.objects.filter(email=e, Password=p).first()
-
-        if emp:
-            req.session['emp_email'] = emp.email               #session me save krne ke liye aise hm use krte h 
-
-            return render(req, 'empdashboard.html', {'emp': emp})
+        # emp = employee.objects.filter(email=e, Password=p).first()
+        m= employee.objects.filter(email=e)
+        if m :
+            req.session['emp_email'] = e               #session me save krne ke liye aise hm use krte h 
+            return render(req, 'empdashboard.html')
         else:
             return render(req, 'login.html', {'error': 'Email ya Password galat hai'})
 
@@ -177,6 +175,10 @@ def edit_employee(req,pk):
     }
     return render(req,'add_emp.html',{'data':data})
 
+
+
+
+
 def update_data(req,pk):
     if (req.method=='POST'):
         e=req.POST.get('empid')
@@ -222,7 +224,23 @@ Company Team
 
         return render(req, 'admindashboard.html')
         # return render(req,'admindashboard.html')
-                                                                                                          
+
+def emp_query(req):
+    if req.method=='POST':
+        user=req.session.get('emp_email')
+        ti=req.POST.get('title')
+        mssg=req.POST.get('query')
+
+        Query.objects.create(employe_mailid=user,title=ti,question=mssg)
+
+    return render(req,'empdashboard.html',)
+
+
+
+
+
+
+
 def del_employee(req,pk):
         userdata=employee.objects.get(id=pk)
         userdata.delete()

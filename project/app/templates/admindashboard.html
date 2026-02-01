@@ -167,41 +167,5 @@
     </div>
   </div>
 
-  {% comment %} <script>
-    const employees = [];
-
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      event.target.classList.add('active');
-    }
-
-    function addEmployee() {
-      const name = document.getElementById('name').value;
-      const role = document.getElementById('role').value;
-
-      if (!name || !role) return alert('Fill all fields');
-
-      employees.push({ name, role });
-      document.getElementById('name').value = '';
-      document.getElementById('role').value = '';
-
-      renderEmployees();
-      showSection('list');
-    }
-
-    function renderEmployees() {
-      const table = document.getElementById('employeeTable');
-      table.innerHTML = '';
-
-      employees.forEach(emp => {
-        const row = `<tr><td>${emp.name}</td><td>${emp.role}</td></tr>`;
-        table.innerHTML += row;
-      });
-    }
-  </script> {% endcomment %}
-
 </body>
 </html>

@@ -40,7 +40,7 @@ urlpatterns = [
     path('del_employee/<int:pk>/',views.del_employee,name='del_employee'),
 
     
-
+    path('emp_query/',views.emp_query,name='emp_query'),
     
 
     # path('add_emp/<int:pk>/',views.add_emp,name='add_emp'),
