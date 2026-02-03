@@ -70,6 +70,9 @@ def Reset_data(req):
 def empdashboard(req):
     return render(req,'empdashboard.html')
 
+def admindashboard(req):
+    return render(req,'admindashboard.html')
+
 def add_emp(req):
     return render(req,'add_emp.html')
 
@@ -249,4 +252,4 @@ def del_employee(req,pk):
 def logout(req):
     if req.session.get('admin'):
         req.session.flush()
-    return render(req,'login.html')
+    return render(req,'landing.html')

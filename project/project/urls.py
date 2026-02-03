@@ -28,6 +28,7 @@ urlpatterns = [
     path('verify_otp',views.verify_otp,name='verify_otp'),    
     path('Reset_data',views.Reset_data,name='Reset_data'),    
     path('empdashboard',views.empdashboard,name='empdashboard'),
+    path('admindashboard',views.admindashboard,name='admindashboard'),
     # path('profile',views.profile,name='profile'),
 
     path('add_emp/',views.add_emp,name='add_emp'),
