@@ -1,0 +1,138 @@
+<style>
+/* QUERY SECTION */
+.admin-query-section{
+margin-top:40px;
+}
+
+.query-box{
+background:#ffffff;
+border-radius:16px;
+padding:22px;
+margin-bottom:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+animation:fadeUp .6s ease;
+}
+
+.query-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+}
+
+.query-title{
+font-size:18px;
+font-weight:600;
+color:#1e293b;
+}
+
+.query-email{
+font-size:14px;
+color:#2563eb;
+}
+
+.query-message{
+margin:15px 0;
+font-size:15px;
+color:#334155;
+line-height:1.6;
+background:#f8fafc;
+padding:15px;
+border-radius:12px;
+}
+
+.reply-toggle{
+background:#4f46e5;
+color:#fff;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.reply-toggle:hover{
+background:#3730a3;
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(79,70,229,.5);
+}
+
+/* REPLY SECTION */
+.reply-section{
+margin-top:18px;
+display:none;
+animation:slideDown .4s ease;
+}
+
+.reply-section textarea{
+width:100%;
+height:100px;
+padding:14px;
+border-radius:12px;
+border:1px solid #ccc;
+resize:none;
+margin-bottom:10px;
+}
+
+.reply-send{
+background:#22c55e;
+color:#fff;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.reply-send:hover{
+background:#16a34a;
+box-shadow:0 10px 25px rgba(34,197,94,.5);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes slideDown{
+from{opacity:0;transform:translateY(-10px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+
+<div class="admin-query-section">
+<h2 style="margin-bottom:25px;">Employee Queries</h2>
+
+{% for q in queries %}
+<div class="query-box">
+
+  <div class="query-header">
+    <div class="query-title">{{ q.title }}</div>
+    <div class="query-email">{{ q.email }}</div>
+  </div>
+
+  <div class="query-message">
+    {{ q.message }}
+  </div>
+
+  <button class="reply-toggle" onclick="toggleReply(this)">
+    Reply
+  </button>
+
+  <div class="reply-section">
+    <textarea placeholder="Type your reply here..."></textarea>
+    <button class="reply-send">Send Reply</button>
+  </div>
+
+</div>
+{% endfor %}
+</div>
+
+<script>
+function toggleReply(btn){
+let replySection = btn.nextElementSibling;
+replySection.style.display =
+replySection.style.display === "block" ? "none" : "block";
+}
+</script>

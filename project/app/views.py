@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
+import razorpay
 from .models import employee , Query
 # from .models import passwordrest
 import random
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
 
 
 # from django.shortcuts import get_object_or_404
@@ -240,6 +242,78 @@ def emp_query(req):
 
 
 
+def showquery(req):
+    queries=Query.objects.all()
+    return render(req,'showquery.html',{'queries':queries})
+
+
+
+def Pay_salary(request,pk):
+    emp = employee.objects.get(id=pk)   # ya jo tumhara model hai
+    print(emp)
+    request.session["emp"]=pk
+    return render(request, "paycard.html", {"emp": emp})
+
+
+
+
+
+
+
+
+
+
+
+
+@csrf_exempt
+def payment(request):
+    global payment
+    if request.method == "POST":
+        # amount in paisa
+        salary = int(request.POST.get('amount'))
+        amount = salary* 100
+        
+        print(amount)
+        client = razorpay.Client(auth =("rzp_test_SBgtTkwvybHJf0" , "gY3kY8r2vLVW4obdtOE95aVC"))
+        # create order
+        
+        data = { "amount": amount, "currency": "INR", "receipt": "order_rcptid_11" }
+        payment = client.order.create(data=data)
+        print(payment)
+        empid = request.session.get("emp")
+        emp = employee.objects.get(id=empid)
+        
+        # print(payment)
+        return render(request,'paycard.html',{'amount':salary,'payment':payment,"emp":emp})
+    
+
+@csrf_exempt
+def payment_status(request):
+    if request.method != "POST":
+        return render("admindashboard")
+
+    client = razorpay.Client(
+        auth=("rzp_test_SBgtTkwvybHJf0", "gY3kY8r2vLVW4obdtOE95aVC")
+    )
+
+    data = {
+        'razorpay_order_id': request.POST.get('razorpay_order_id'),
+        'razorpay_payment_id': request.POST.get('razorpay_payment_id'),
+        'razorpay_signature': request.POST.get('razorpay_signature')
+    }
+
+    try:
+        client.utility.verify_payment_signature(data)
+
+        emp= employee.objects.get(order_id=data['razorpay_order_id'])
+        emp.razorpay_payment_id = data['razorpay_payment_id']
+        emp.paid = True
+        emp.save()
+
+        return render(request, 'app/success.html', {'status': True})
+
+    except:
+        return render(request, 'app/success.html', {'status': False})
 
 
 

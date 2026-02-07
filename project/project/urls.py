@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views
+# from . views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,14 +36,20 @@ urlpatterns = [
     path('emp_data/',views.emp_data,name='emp_data'),
     path('show_emp/',views.show_emp,name='show_emp'),
     path('edit_employee/<int:pk>/',views.edit_employee,name='edit_employee'),
+    path('showquery/',views.showquery,name='showquery'),
     path('logout/',views.logout,name='logout'),
+    path('Pay_salary/<int:pk>',views.Pay_salary,name='Pay_salary'),
     # path('logout/',views.logout,name='logout'),
     path('update_data/<str:pk>/',views.update_data,name='update_data'),
     path('del_employee/<int:pk>/',views.del_employee,name='del_employee'),
 
-    
+    # for Queries
     path('emp_query/',views.emp_query,name='emp_query'),
-    
 
-    # path('add_emp/<int:pk>/',views.add_emp,name='add_emp'),
+
+    # for payments
+    path('payment/',views.payment,name='payment'),
+
+    path('payment_status/',views.payment_status,name='payment_status')
+    
 ]

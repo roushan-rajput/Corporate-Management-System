@@ -1,0 +1,171 @@
+<style>
+    /* Page Wrapper */
+    .page-wrapper {
+        min-height: 100vh;
+        background: #95b1f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Form layout */
+    .page-wrapper form {
+        width: 100%;
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    /* Employee Card */
+    .emp-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 25px;
+        box-shadow: 0 10px 25px rgb(0, 0, 0);
+    }
+
+    .emp-card p {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #000000;
+        font-size: 15px;
+    }
+
+    .emp-card p:last-child {
+        border-bottom: none;
+    }
+
+    .emp-card b {
+        color: #000000;
+    }
+
+    .emp-card span {
+        color: #000000;
+        font-weight: 500;
+    }
+
+    /* Payment Card */
+    .pay-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 25px;
+        box-shadow: 0 10px 25px rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pay-card h3 {
+        margin: 0;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    .pay-card h1 {
+        margin: 0;
+        font-size: 32px;
+        color: #111;
+    }
+
+    /* Amount Input */
+    .pay-card input[type="number"] {
+        padding: 14px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .pay-card input[type="number"]:focus {
+        border-color: #2520adff;
+    }
+
+    /* Pay Button */
+    button {
+        grid-column: span 2;
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        background: linear-gradient(135deg, rgb(72, 93, 225), #4369e4);
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgb(0, 0, 0);
+        transition: 0.2s ease;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(37, 32, 173, 0.45);
+    }
+
+    /* Razorpay Button */
+    .razorpay-payment-button {
+        padding: 14px 22px !important;
+        border-radius: 10px !important;
+        font-size: 16px !important;
+        background: #2520adff !important;
+        color: #fff !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .page-wrapper form {
+            grid-template-columns: 1fr;
+        }
+
+        button {
+            grid-column: span 1;
+        }
+    }
+</style>
+
+
+<div class="page-wrapper">
+
+    <form action="{% url 'payment' %}" method="POST">
+        {% csrf_token %}
+
+        <!-- Employee Card -->
+        <div class="emp-card">
+            <h2>Employee Details</h2>
+            <p><b>Emp ID</b><span>{{emp.empid}}</span></p>
+            <p><b>Name</b><span>{{emp.name}}</span></p>
+            <p><b>Email</b><span>{{emp.email}}</span></p>
+            <p><b>Contact</b><span>{{emp.contact}}</span></p>
+            <p><b>Position</b><span>{{emp.position}}</span></p>
+            <p><b>Salary</b><span>₹ {{emp.salary}}</span></p>
+        </div>
+
+        <!-- Payment Card -->
+        <div class="pay-card">
+            <h3>Make Payment</h3>
+
+            {% if amount %}
+            <h1>{{amount}}</h1>
+            {% else %}
+            <input type="number" name="amount" placeholder="Enter Amount" required>
+            {% endif %}
+        </div>
+
+        {% if not payment %}
+        <button>Pay</button>
+        {% else %}
+        <form action="{% url 'payment_status' %}" method="post">
+            {% csrf_token %}
+            <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_SBgtTkwvybHJf0"
+                data-amount="{{ payment.amount }}" data-currency="{{ payment.currency }}"
+                data-order_id="{{ payment.id }}" data-buttontext="Pay with Razorpay" data-name="CIMAGE Pvt. Ltd."
+                data-description="Thanku for visiting My Site" data-image="https://example.com/your_logo.jpg"
+                data-prefill.name="Roushan Kumar" data-prefill.email="roushanrajput12362@gmail.com"
+                data-theme.color="#2520adff"></script>
+            <input type="hidden" custom="Hidden Element" name="hidden">
+        </form>
+        {% endif %}
+    </form>
+
+</div>
