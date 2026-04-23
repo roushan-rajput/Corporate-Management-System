@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
@@ -16,14 +17,15 @@
             padding: 0;
             box-sizing: border-box
         }
+=======
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard</title>
+>>>>>>> 2fe215e (Upgrading some frontend)
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #f4f6f9;
-            display: flex;
-            min-height: 100vh;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<<<<<<< HEAD
         .sidebar {
             width: 260px;
             background: #1e1b4b;
@@ -226,5 +228,262 @@
             </tbody>
         </table>
     </div>
+=======
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#eef2ff,#f8fafc);
+    display:flex;
+    min-height:100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar{
+    width:260px;
+    background:linear-gradient(180deg,#1e1b4b,#312e81);
+    color:#fff;
+    padding:30px 20px;
+    box-shadow:4px 0 20px rgba(0,0,0,.3);
+}
+.sidebar h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+.nav-link{
+    display:block;
+    padding:14px 20px;
+    margin-bottom:12px;
+    border-radius:12px;
+    color:#c7d2fe;
+    text-decoration:none;
+    transition:.35s;
+}
+.nav-link:hover,
+.nav-link.active{
+    background:#4f46e5;
+    color:#fff;
+    transform:translateX(8px);
+}
+
+/* ================= MAIN ================= */
+.main{
+    flex:1;
+    padding:30px;
+    animation:fadeIn .7s ease;
+}
+
+/* ================= TOPBAR ================= */
+.topbar{
+    background:#fff;
+    padding:20px 30px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    margin-bottom:30px;
+}
+.topbar h3{
+    font-weight:500;
+}
+
+/* ================= TABLE ================= */
+.table-container{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+    animation:tableOpen .8s ease;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+thead{
+    background:#1e1b4b;
+    color:#fff;
+}
+
+th{
+    padding:15px;
+    font-size:15px;
+    text-align:center;
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    font-size:14px;
+}
+
+tbody tr{
+    transition:.35s;
+}
+tbody tr:hover{
+    background:#eef2ff;
+    transform:scale(1.01);
+}
+
+tbody tr:nth-child(even){
+    background:#f9fafb;
+}
+
+/* ================= BUTTONS ================= */
+.edit-btn,
+.delete-btn,
+.salary-btn{
+    padding:8px 16px;
+    border-radius:10px;
+    color:#fff;
+    text-decoration:none;
+    display:inline-block;
+    transition:.3s;
+}
+
+.edit-btn{
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+.edit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(34,197,94,.5);
+}
+
+.delete-btn{
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+.delete-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(239,68,68,.5);
+}
+
+.salary-btn{
+    background:linear-gradient(135deg,#f59e0b,#f97316);
+}
+.salary-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 25px rgba(245,158,11,.6);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+@keyframes tableOpen{
+    from{
+        transform:translateY(40px) scale(.95);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+}
+
+/* Row delete animation */
+tr.fade-out{
+    animation:rowClose .5s forwards;
+}
+
+@keyframes rowClose{
+    to{
+        opacity:0;
+        transform:translateX(-40px);
+    }
+}
+
+@media(max-width:768px){
+    .sidebar{width:220px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>Admin Panel</h2>
+  <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
+  <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
+  <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
+  <a class="nav-link" href="#">Attendance</a>
+  <a class="nav-link" href="#">Queries</a>
+  <a class="nav-link" href="#">Leave Management</a>
+  <a class="nav-link" href="#">Reports</a>
+  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="topbar">
+    <h3>Welcome Roushan!</h3>
+</div>
+
+<div class="table-container">
+<table id="employee">
+<thead>
+<tr>
+<th>Emp ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Contact</th>
+<th>Position</th>
+<th>Salary</th>
+<th>Password</th>
+<th>Pay!!!</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+</thead>
+
+<tbody>
+{% for i in emp %}
+<tr>
+<td>{{ i.empid }}</td>
+<td>{{ i.name }}</td>
+<td>{{ i.email }}</td>
+<td>{{ i.contact }}</td>
+<td>{{ i.position }}</td>
+<td>{{ i.salary }}</td>
+<td>{{ i.Password }}</td>
+<td>
+<a href="" class="salary-btn">Pay</a>
+</td>
+<td>
+<a href="{% url 'edit_employee' pk=i.id %}" class="edit-btn">Edit</a>
+</td>
+<td>
+<a href="{% url 'del_employee' pk=i.id %}" class="delete-btn delete-row">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll('.delete-row').forEach(btn=>{
+    btn.addEventListener('click',function(e){
+        e.preventDefault();
+        let row=this.closest('tr');
+        row.classList.add('fade-out');
+        setTimeout(()=>{ window.location=this.href; },400);
+    });
+});
+</script>
+
+>>>>>>> 2fe215e (Upgrading some frontend)
 </body>
 </html>
