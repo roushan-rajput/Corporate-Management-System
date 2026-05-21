@@ -7,7 +7,6 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
-
 # from django.shortcuts import get_object_or_404
 
 # Create your views here.
@@ -53,7 +52,6 @@ def verify_otp(req):
 
     return render(req, 'verify_otp.html')
 
-        
 def Reset_data(req):
     if (req.method=='POST'):
         p=req.POST.get('Reset_pass')
@@ -65,9 +63,6 @@ def Reset_data(req):
         if p==cp:
             emp_details=employee.objects.get(email=e)
             print(emp_details.name)
-
-
-
 
 def empdashboard(req):
     return render(req,'empdashboard.html')
@@ -180,10 +175,6 @@ def edit_employee(req,pk):
     }
     return render(req,'add_emp.html',{'data':data})
 
-
-
-
-
 def update_data(req,pk):
     if (req.method=='POST'):
         e=req.POST.get('empid')
@@ -255,16 +246,6 @@ def Pay_salary(request,pk):
     return render(request, "paycard.html", {"emp": emp})
 
 
-
-
-
-
-
-
-
-
-
-
 @csrf_exempt
 def payment(request):
     global payment
@@ -287,6 +268,7 @@ def payment(request):
         return render(request,'paycard.html',{'amount':salary,'payment':payment,"emp":emp})
     
 
+    
 @csrf_exempt
 def payment_status(request):
     if request.method != "POST":
@@ -310,10 +292,10 @@ def payment_status(request):
         emp.paid = True
         emp.save()
 
-        return render(request, 'app/success.html', {'status': True})
+        return render(request, 'showemp.html', {'status': True})
 
     except:
-        return render(request, 'app/success.html', {'status': False})
+        return render(request, 'showemp.html', {'status': False})
 
 
 
