@@ -245,7 +245,6 @@ def Pay_salary(request,pk):
     request.session["emp"]=pk
     return render(request, "paycard.html", {"emp": emp})
 
-
 @csrf_exempt
 def payment(request):
     global payment
@@ -266,8 +265,6 @@ def payment(request):
         
         # print(payment)
         return render(request,'paycard.html',{'amount':salary,'payment':payment,"emp":emp})
-    
-
     
 @csrf_exempt
 def payment_status(request):

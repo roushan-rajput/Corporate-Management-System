@@ -1,360 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Admin Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
 
-<<<<<<< HEAD
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #f4f6f9;
-            display: flex;
-            min-height: 5vh;
-        }
-=======
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
->>>>>>> 2fe215e (Upgrading some frontend)
+    <<<<<<< HEAD body { font-family: 'Poppins' , sans-serif; background: #f4f6f9; display: flex; min-height: 5vh;
+        }=======<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+        >>>>>>> 2fe215e (Upgrading some frontend)
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#eef2ff,#f8fafc);
-    display:flex;
-    min-height:100vh;
-}
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(135deg, #eef2ff, #f8fafc);
+                display: flex;
+                min-height: 100vh;
+            }
 
-/* ================= SIDEBAR ================= */
-.sidebar{
-    width:260px;
-    background:linear-gradient(180deg,#1e1b4b,#312e81);
-    color:#fff;
-    padding:30px 20px;
-    box-shadow:4px 0 20px rgba(0,0,0,.25);
-}
-.sidebar h2{
-    text-align:center;
-    margin-bottom:40px;
-    font-weight:600;
-    letter-spacing:1px;
-}
-.nav-link{
-    display:block;
-    padding:14px 20px;
-    margin-bottom:12px;
-    border-radius:12px;
-    color:#c7d2fe;
-    text-decoration:none;
-    transition:.35s;
-}
-.nav-link:hover,
-.nav-link.active{
-    background:#4f46e5;
-    color:#fff;
-    transform:translateX(8px);
-}
+            /* ================= SIDEBAR ================= */
+            .sidebar {
+                width: 260px;
+                background: linear-gradient(180deg, #1e1b4b, #312e81);
+                color: #fff;
+                padding: 30px 20px;
+                box-shadow: 4px 0 20px rgba(0, 0, 0, .25);
+            }
 
-/* ================= MAIN ================= */
-.main{
-    flex:1;
-    padding:30px;
-    animation:fadeIn .6s ease;
-}
+            .sidebar h2 {
+                text-align: center;
+                margin-bottom: 40px;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
 
-/* ================= TOPBAR ================= */
-.topbar{
-    background:#fff;
-    padding:20px 28px;
-    border-radius:18px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:35px;
-}
-.topbar h3{
-    font-weight:500;
-}
-.topbar span{
-    background:#4f46e5;
-    color:#fff;
-    padding:6px 18px;
-    border-radius:20px;
-    font-size:14px;
-}
+            .nav-link {
+                display: block;
+                padding: 14px 20px;
+                margin-bottom: 12px;
+                border-radius: 12px;
+                color: #c7d2fe;
+                text-decoration: none;
+                transition: .35s;
+            }
 
-/* ================= FORM ================= */
-.dashboard{
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-}
+            .nav-link:hover,
+            .nav-link.active {
+                background: #4f46e5;
+                color: #fff;
+                transform: translateX(8px);
+            }
 
-<<<<<<< HEAD
-        /* Form Container */
-        .form-container {
-            background-color:lightgrey;;
-            align-items: center;
-            box-shadow: 15px 10px 25px rgb(0, 0, 0);
-            border-radius: 15px;
-            padding: 25px;
-            border-radius: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 10%;
-            width: 100%;
-            max-width: 500px;
-            gap: 5px;
-        }
+            /* ================= MAIN ================= */
+            .main {
+                flex: 1;
+                padding: 30px;
+                animation: fadeIn .6s ease;
+            }
 
-        .form-container h2 {
-            text-align: center;
-        }
-=======
-.form-container{
-    width:100%;
-    max-width:520px;
-    background:#fff;
-    padding:35px;
-    border-radius:22px;
-    box-shadow:0 25px 60px rgba(0,0,0,.2);
-    animation:scaleFade .7s ease;
-}
+            /* ================= TOPBAR ================= */
+            .topbar {
+                background: #fff;
+                padding: 20px 28px;
+                border-radius: 18px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 35px;
+            }
 
-.form-container h2{
-    text-align:center;
-    margin-bottom:25px;
-    color:#1e1b4b;
-}
->>>>>>> 2fe215e (Upgrading some frontend)
+            .topbar h3 {
+                font-weight: 500;
+            }
 
-.form-group{
-    margin-bottom:18px;
-}
+            .topbar span {
+                background: #4f46e5;
+                color: #fff;
+                padding: 6px 18px;
+                border-radius: 20px;
+                font-size: 14px;
+            }
 
-label{
-    font-size:14px;
-    font-weight:500;
-    display:block;
-    margin-bottom:6px;
-    color:#374151;
-}
+            /* ================= FORM ================= */
+            .dashboard {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
 
-input{
-    width:100%;
-    padding:12px 14px;
-    border-radius:12px;
-    border:1px solid #c7d2fe;
-    outline:none;
-    transition:.3s;
-}
-input:focus{
-    border-color:#4f46e5;
-    box-shadow:0 0 0 4px rgba(79,70,229,.25);
-}
+            <<<<<<< HEAD
 
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:14px;
-    font-size:15px;
-    background:linear-gradient(135deg,#4f46e5,#6366f1);
-    color:#fff;
-    cursor:pointer;
-    transition:.35s;
-}
-button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 30px rgba(79,70,229,.45);
-}
+            /* Form Container */
+            .form-container {
+                background-color: lightgrey;
+                ;
+                align-items: center;
+                box-shadow: 15px 10px 25px rgb(0, 0, 0);
+                border-radius: 15px;
+                padding: 25px;
+                border-radius: 15px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 10%;
+                width: 100%;
+                max-width: 500px;
+                gap: 5px;
+            }
 
-/* ================= CARDS ================= */
-.card{
-    background:#fff;
-    padding:30px;
-    height:100%;
-    border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,.18);
-    animation:slideUp .6s ease;
-}
+            .form-container h2 {
+                text-align: center;
+            }
 
-/* ================= ANIMATIONS ================= */
-@keyframes fadeIn{
-    from{opacity:0}
-    to{opacity:1}
-}
-@keyframes slideUp{
-    from{transform:translateY(30px);opacity:0}
-    to{transform:translateY(0);opacity:1}
-}
-@keyframes scaleFade{
-    from{transform:scale(.92);opacity:0}
-    to{transform:scale(1);opacity:1}
-}
+            =======.form-container {
+                width: 100%;
+                max-width: 520px;
+                background: #fff;
+                padding: 35px;
+                border-radius: 22px;
+                box-shadow: 0 25px 60px rgba(0, 0, 0, .2);
+                animation: scaleFade .7s ease;
+            }
 
-<<<<<<< HEAD
-        th {
-            background: #566493;
-        }
-=======
-.section{display:none;}
-.section.active{display:block;}
->>>>>>> 2fe215e (Upgrading some frontend)
+            .form-container h2 {
+                text-align: center;
+                margin-bottom: 25px;
+                color: #1e1b4b;
+            }
 
-@media(max-width:768px){
-    .sidebar{width:210px;}
-}
-</style>
+            >>>>>>>2fe215e (Upgrading some frontend) .form-group {
+                margin-bottom: 18px;
+            }
+
+            label {
+                font-size: 14px;
+                font-weight: 500;
+                display: block;
+                margin-bottom: 6px;
+                color: #374151;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px 14px;
+                border-radius: 12px;
+                border: 1px solid #c7d2fe;
+                outline: none;
+                transition: .3s;
+            }
+
+            input:focus {
+                border-color: #4f46e5;
+                box-shadow: 0 0 0 4px rgba(79, 70, 229, .25);
+            }
+
+            button {
+                width: 100%;
+                padding: 14px;
+                border: none;
+                border-radius: 14px;
+                font-size: 15px;
+                background: linear-gradient(135deg, #4f46e5, #6366f1);
+                color: #fff;
+                cursor: pointer;
+                transition: .35s;
+            }
+
+            button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 30px rgba(79, 70, 229, .45);
+            }
+
+            /* ================= CARDS ================= */
+            .card {
+                background: #fff;
+                padding: 30px;
+                height: 100%;
+                border-radius: 20px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .18);
+                animation: slideUp .6s ease;
+            }
+
+            /* ================= ANIMATIONS ================= */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(30px);
+                    opacity: 0
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1
+                }
+            }
+
+            @keyframes scaleFade {
+                from {
+                    transform: scale(.92);
+                    opacity: 0
+                }
+
+                to {
+                    transform: scale(1);
+                    opacity: 1
+                }
+            }
+
+            <<<<<<< HEAD th {
+                background: #566493;
+            }
+
+            =======.section {
+                display: none;
+            }
+
+            .section.active {
+                display: block;
+            }
+
+            >>>>>>>2fe215e (Upgrading some frontend) @media(max-width:768px) {
+                .sidebar {
+                    width: 210px;
+                }
+            }
+        </style>
 </head>
 
 <body>
-<<<<<<< HEAD
-    <!-- Sidebar -->
-    <div class="sidebar">
-  <h2>Admin Panel</h2>
-  <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
-  <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
-  <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
-  <a class="nav-link" href="#">Attendance</a>
-  <a class="nav-link" href="#">Queries</a>
-  <a class="nav-link" href="#">Leave Management</a>
-  <a class="nav-link" href="#">Reports</a>
-  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-</div>
+    <<<<<<< HEAD <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
+            <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
+            <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
+            <a class="nav-link" href="#">Attendance</a>
+            <a class="nav-link" href="#">Queries</a>
+            <a class="nav-link" href="#">Leave Management</a>
+            <a class="nav-link" href="#">Reports</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </div>
 
-    <!-- Main -->
-    <div class="main">
-        
-        <div class="dashboard">
-            <div class="form-container">
-                <h2>Employee Form</h2>
-                <!-- {{msg}} -->
-                {% if not data %}
-                <form action="{% url 'emp_data' %}" method="POST">
-                    {% csrf_token %}
-=======
+        <!-- Main -->
+        <div class="main">
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-  <h2>Admin Panel</h2>
-  <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
-  <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
-  <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
-  <a class="nav-link" href="#">Attendance</a>
-  <a class="nav-link" href="#">Queries</a>
-  <a class="nav-link" href="#">Leave Management</a>
-  <a class="nav-link" href="#">Reports</a>
-  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-</div>
->>>>>>> 2fe215e (Upgrading some frontend)
+            <div class="dashboard">
+                <div class="form-container">
+                    <h2>Employee Form</h2>
+                    <!-- {{msg}} -->
+                    {% if not data %}
+                    <form action="{% url 'emp_data' %}" method="POST">
+                        {% csrf_token %}
+                        =======
 
-<!-- MAIN -->
-<div class="main">
+                        <!-- SIDEBAR -->
+                        <div class="sidebar">
+                            <h2>Admin Panel</h2>
+                            <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
+                            <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
+                            <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
+                            <a class="nav-link" href="#">Attendance</a>
+                            <a class="nav-link" href="#">Queries</a>
+                            <a class="nav-link" href="#">Leave Management</a>
+                            <a class="nav-link" href="#">Reports</a>
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </div>
+                        >>>>>>> 2fe215e (Upgrading some frontend)
 
-{% comment %} <div class="topbar">
-    <h3>Welcome!</h3>
-    <span>Admin</span>
-</div> {% endcomment %}
+                        <!-- MAIN -->
+                        <div class="main">
 
-<div class="dashboard">
-<div class="form-container">
-<h2>Employee Form</h2>
+                            {% comment %} <div class="topbar">
+                                <h3>Welcome!</h3>
+                                <span>Admin</span>
+                            </div> {% endcomment %}
 
-{% if not data %}
-<form action="{% url 'emp_data' %}" method="POST">
-{% csrf_token %}
+                            <div class="dashboard">
+                                <div class="form-container">
+                                    <h2>Employee Form</h2>
 
-<div class="form-group">
-<label>Employee ID</label>
-<input type="text" name="empid" required>
-</div>
+                                    {% if not data %}
+                                    <form action="{% url 'emp_data' %}" method="POST">
+                                        {% csrf_token %}
 
-<div class="form-group">
-<label>Employee Name</label>
-<input type="text" name="empname" required>
-</div>
+                                        <div class="form-group">
+                                            <label>Employee ID</label>
+                                            <input type="text" name="empid" required>
+                                        </div>
 
-<div class="form-group">
-<label>Email ID</label>
-<input type="email" name="empemail" required>
-</div>
+                                        <div class="form-group">
+                                            <label>Employee Name</label>
+                                            <input type="text" name="empname" required>
+                                        </div>
 
-<div class="form-group">
-<label>Position</label>
-<input type="text" name="empposition" required>
-</div>
+                                        <div class="form-group">
+                                            <label>Email ID</label>
+                                            <input type="email" name="empemail" required>
+                                        </div>
 
-<div class="form-group">
-<label>Contact</label>
-<input type="tel" name="empcontact" required>
-</div>
+                                        <div class="form-group">
+                                            <label>Position</label>
+                                            <input type="text" name="empposition" required>
+                                        </div>
 
-<div class="form-group">
-<label>Password</label>
-<input type="password" name="emppassword" required>
-</div>
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="tel" name="empcontact" required>
+                                        </div>
 
-<div class="form-group">
-<label>Salary</label>
-<input type="number" name="empsalary" required>
-</div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" name="emppassword" required>
+                                        </div>
 
-<button type="submit">Add Employee</button>
-</form>
+                                        <div class="form-group">
+                                            <label>Salary</label>
+                                            <input type="number" name="empsalary" required>
+                                        </div>
 
-{% else %}
-<form action="{% url 'update_data' pk=data.id %}" method="POST">
-{% csrf_token %}
+                                        <button type="submit">Add Employee</button>
+                                    </form>
 
-<div class="form-group">
-<label>Employee ID</label>
-<input type="text" value="{{data.id}}" name="empid">
-</div>
+                                    {% else %}
+                                    <form action="{% url 'update_data' pk=data.id %}" method="POST">
+                                        {% csrf_token %}
 
-<div class="form-group">
-<label>Employee Name</label>
-<input type="text" value="{{data.name}}" name="empname">
-</div>
+                                        <div class="form-group">
+                                            <label>Employee ID</label>
+                                            <input type="text" value="{{data.id}}" name="empid">
+                                        </div>
 
-<div class="form-group">
-<label>Email ID</label>
-<input type="email" value="{{data.email}}" name="empemail">
-</div>
+                                        <div class="form-group">
+                                            <label>Employee Name</label>
+                                            <input type="text" value="{{data.name}}" name="empname">
+                                        </div>
 
-<div class="form-group">
-<label>Position</label>
-<input type="text" value="{{data.position}}" name="empposition">
-</div>
+                                        <div class="form-group">
+                                            <label>Email ID</label>
+                                            <input type="email" value="{{data.email}}" name="empemail">
+                                        </div>
 
-<div class="form-group">
-<label>Contact</label>
-<input type="tel" value="{{data.contact}}" name="empcontact">
-</div>
+                                        <div class="form-group">
+                                            <label>Position</label>
+                                            <input type="text" value="{{data.position}}" name="empposition">
+                                        </div>
 
-<div class="form-group">
-<label>Password</label>
-<input type="password" name="emppassword">
-</div>
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="tel" value="{{data.contact}}" name="empcontact">
+                                        </div>
 
-<div class="form-group">
-<label>Salary</label>
-<input type="number" value="{{data.salary}}" name="empsalary">
-</div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" name="emppassword">
+                                        </div>
 
-<button type="submit">Update Employee</button>
-</form>
-{% endif %}
+                                        <div class="form-group">
+                                            <label>Salary</label>
+                                            <input type="number" value="{{data.salary}}" name="empsalary">
+                                        </div>
 
-</div>
-</div>
-</div>
+                                        <button type="submit">Update Employee</button>
+                                    </form>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
 
 </body>
+
 </html>
