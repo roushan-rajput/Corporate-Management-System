@@ -294,9 +294,6 @@ def payment_status(request):
     except:
         return render(request, 'showemp.html', {'status': False})
 
-
-
-
 def del_employee(req,pk):
         userdata=employee.objects.get(id=pk)
         userdata.delete()

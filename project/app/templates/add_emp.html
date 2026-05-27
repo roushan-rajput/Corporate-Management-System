@@ -244,146 +244,150 @@
 </head>
 
 <body>
-    <<<<<<< HEAD <!-- Sidebar -->
-        <div class="sidebar">
-            <h2>Admin Panel</h2>
-            <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
-            <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
-            <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
-            <a class="nav-link" href="#">Attendance</a>
-            <a class="nav-link" href="#">Queries</a>
-            <a class="nav-link" href="#">Leave Management</a>
-            <a class="nav-link" href="#">Reports</a>
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-        </div>
 
-        <!-- Main -->
-        <div class="main">
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
+        <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
+        <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
+        <a class="nav-link" href="#">Attendance</a>
+        <a class="nav-link" href="#">Queries</a>
+        <a class="nav-link" href="#">Leave Management</a>
+        <a class="nav-link" href="#">Reports</a>
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </div>
 
-            <div class="dashboard">
-                <div class="form-container">
-                    <h2>Employee Form</h2>
-                    <!-- {{msg}} -->
-                    {% if not data %}
-                    <form action="{% url 'emp_data' %}" method="POST">
-                        {% csrf_token %}
-                        =======
+    <!-- Main -->
+    <div class="main">
 
-                        <!-- SIDEBAR -->
-                        <div class="sidebar">
-                            <h2>Admin Panel</h2>
-                            <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
-                            <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
-                            <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
-                            <a class="nav-link" href="#">Attendance</a>
-                            <a class="nav-link" href="#">Queries</a>
-                            <a class="nav-link" href="#">Leave Management</a>
-                            <a class="nav-link" href="#">Reports</a>
-                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                        </div>
-                        >>>>>>> 2fe215e (Upgrading some frontend)
+        <div class="dashboard">
+            <div class="form-container">
+                <h2>Employee Form</h2>
+                <!-- {{msg}} -->
+                {% if not data %}
+                <form action="{% url 'emp_data' %}" method="POST">
+                    {% csrf_token %}
+                    =======
 
-                        <!-- MAIN -->
-                        <div class="main">
+                    <!-- SIDEBAR -->
+                    <div class="sidebar">
+                        <h2>Admin Panel</h2>
+                        <a class="nav-link active" href="{% url 'admindashboard' %}">Dashboard</a>
+                        <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
+                        <a class="nav-link" href="{% url 'show_emp' %}">All Employees</a>
+                        <a class="nav-link" href="#">Attendance</a>
+                        <a class="nav-link" href="#">Queries</a>
+                        <a class="nav-link" href="#">Leave Management</a>
+                        <a class="nav-link" href="#">Reports</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </div>
+                    >>>>>>> 2fe215e (Upgrading some frontend)
 
-                            {% comment %} <div class="topbar">
-                                <h3>Welcome!</h3>
-                                <span>Admin</span>
-                            </div> {% endcomment %}
+                    <!-- MAIN -->
+                    <div class="main">
 
-                            <div class="dashboard">
-                                <div class="form-container">
-                                    <h2>Employee Form</h2>
+                        {% comment %} <div class="topbar">
+                            <h3>Welcome!</h3>
+                            <span>Admin</span>
+                        </div> {% endcomment %}
 
-                                    {% if not data %}
-                                    <form action="{% url 'emp_data' %}" method="POST">
-                                        {% csrf_token %}
+                        <div class="dashboard">
+                            <div class="form-container">
+                                <h2>Employee Form</h2>
 
-                                        <div class="form-group">
-                                            <label>Employee ID</label>
-                                            <input type="text" name="empid" required>
-                                        </div>
+                                {% if not data %}
+                                <form action="{% url 'emp_data' %}" method="POST">
+                                    {% csrf_token %}
 
-                                        <div class="form-group">
-                                            <label>Employee Name</label>
-                                            <input type="text" name="empname" required>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Employee ID</label>
+                                        <input type="text" name="empid" required>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Email ID</label>
-                                            <input type="email" name="empemail" required>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Employee Name</label>
+                                        <input type="text" name="empname" required>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Position</label>
-                                            <input type="text" name="empposition" required>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Email ID</label>
+                                        <input type="email" name="empemail" required>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Contact</label>
-                                            <input type="tel" name="empcontact" required>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Position</label>
+                                        <input type="text" name="empposition" required>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" name="emppassword" required>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Contact</label>
+                                        <input type="tel" name="empcontact" required>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Salary</label>
-                                            <input type="number" name="empsalary" required>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" name="emppassword" required>
+                                    </div>
 
-                                        <button type="submit">Add Employee</button>
-                                    </form>
+                                    <div class="form-group">
+                                        <label>Salary</label>
+                                        <input type="number" name="empsalary" required>
+                                    </div>
 
-                                    {% else %}
-                                    <form action="{% url 'update_data' pk=data.id %}" method="POST">
-                                        {% csrf_token %}
+                                    <button type="submit">Add Employee</button>
+                                </form>
 
-                                        <div class="form-group">
-                                            <label>Employee ID</label>
-                                            <input type="text" value="{{data.id}}" name="empid">
-                                        </div>
+                                {% else %}
+                                <form action="{% url 'update_data' pk=data.id %}" method="POST">
+                                    {% csrf_token %}
 
-                                        <div class="form-group">
-                                            <label>Employee Name</label>
-                                            <input type="text" value="{{data.name}}" name="empname">
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Employee ID</label>
+                                        <input type="text" value="{{data.id}}" name="empid">
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Email ID</label>
-                                            <input type="email" value="{{data.email}}" name="empemail">
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Employee Name</label>
+                                        <input type="text" value="{{data.name}}" name="empname">
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Position</label>
-                                            <input type="text" value="{{data.position}}" name="empposition">
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Email ID</label>
+                                        <input type="email" value="{{data.email}}" name="empemail">
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Contact</label>
-                                            <input type="tel" value="{{data.contact}}" name="empcontact">
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Position</label>
+                                        <input type="text" value="{{data.position}}" name="empposition">
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" name="emppassword">
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Contact</label>
+                                        <input type="tel" value="{{data.contact}}" name="empcontact">
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label>Salary</label>
-                                            <input type="number" value="{{data.salary}}" name="empsalary">
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" name="emppassword">
+                                    </div>
 
-                                        <button type="submit">Update Employee</button>
-                                    </form>
-                                    {% endif %}
+                                    <div class="form-group">
+                                        <label>Salary</label>
+                                        <input type="number" value="{{data.salary}}" name="empsalary">
+                                    </div>
 
-                                </div>
+                                    <button type="submit">Update Employee</button>
+                                </form>
+                                {% endif %}
+
                             </div>
                         </div>
-
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
 </body>
 
 </html>
