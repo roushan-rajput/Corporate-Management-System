@@ -123,10 +123,8 @@ def emp_data(req):
             f"""Hello {n},
 
 Your account has been created.
-
 Email: {em}
 Password: {cp}
-
 Please keep this information safe.
 
 Thanks,
@@ -142,8 +140,6 @@ Company Team
     return render(req, 'add_emp.html')
 
 # def profile(req):
-
-
 
 def show_emp(req):
     emp=employee.objects.all()
