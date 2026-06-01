@@ -227,13 +227,9 @@ def emp_query(req):
 
     return render(req,'empdashboard.html',)
 
-
-
 def showquery(req):
     queries=Query.objects.all()
     return render(req,'showquery.html',{'queries':queries})
-
-
 
 def Pay_salary(request,pk):
     emp = employee.objects.get(id=pk)   # ya jo tumhara model hai
