@@ -197,6 +197,7 @@ def update_data(req,pk):
             f"""Hello {n},
 
 Your account has been Updated.
+your new data is shown Here!
 Employee ID:{e}
 Name:{n}
 Email: {em}
@@ -215,8 +216,7 @@ Company Team
         )
 
         return render(req, 'admindashboard.html')
-        # return render(req,'admindashboard.html')
-
+    
 def emp_query(req):
     if req.method=='POST':
         user=req.session.get('emp_email')
