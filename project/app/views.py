@@ -123,9 +123,10 @@ def emp_data(req):
             f"""Hello {n},
 
 Your account has been created.
+your data is shown Here!
 Email: {em}
 Password: {cp}
-Please keep this information safe.
+Please keep this information safe.Maintain your Privacy.
 
 Thanks,
 Company Team
