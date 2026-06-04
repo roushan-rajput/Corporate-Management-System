@@ -1,13 +1,12 @@
 from django.shortcuts import render,get_object_or_404
 import razorpay
 from .models import employee , Query
-
 import random
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
-# from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 def landing(req):
