@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 import razorpay
 from .models import employee , Query
-# from .models import passwordrest
+
 import random
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -197,7 +197,7 @@ def update_data(req,pk):
             'Company Updated Details',
             f"""Hello {n},
 
-Your account has been Updated.
+Your account Details has been Updated.
 your new data is shown Here!
 Employee ID:{e}
 Name:{n}
