@@ -6,8 +6,6 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
-
-
 # Create your views here.
 def landing(req):
     return render(req,'landing.html')
@@ -42,13 +40,11 @@ def verify_otp(req):
         user_otp = req.POST.get('otp')
         session_otp = req.session.get('classotp')
         print(session_otp)
-
         if user_otp == session_otp:
             return render(req, 'resetpass.html')
         else:
             print("OTP wrong")
             return render(req, 'verify_otp.html')
-
     return render(req, 'verify_otp.html')
 
 def Reset_data(req):
@@ -207,7 +203,7 @@ Password:{cp}
 
 Please keep this information safe.
 
-Thanks,
+Thank You!!,
 Company Team
 """,
             'roushanrajput12362@gmail.com',
@@ -282,7 +278,7 @@ def payment_status(request):
         emp.save()
 
         return render(request, 'showemp.html', {'status': True})
-
+    
     except:
         return render(request, 'showemp.html', {'status': False})
 
