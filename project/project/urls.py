@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views
-# from . views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,7 +29,7 @@ urlpatterns = [
     path('Reset_data',views.Reset_data,name='Reset_data'),    
     path('empdashboard',views.empdashboard,name='empdashboard'),
     path('admindashboard',views.admindashboard,name='admindashboard'),
-    # path('profile',views.profile,name='profile'),
+    
 
     path('add_emp/',views.add_emp,name='add_emp'),
     path('emp_data/',views.emp_data,name='emp_data'),
@@ -39,7 +38,7 @@ urlpatterns = [
     path('showquery/',views.showquery,name='showquery'),
     path('logout/',views.logout,name='logout'),
     path('Pay_salary/<int:pk>',views.Pay_salary,name='Pay_salary'),
-    # path('logout/',views.logout,name='logout'),
+    
     path('update_data/<str:pk>/',views.update_data,name='update_data'),
     path('del_employee/<int:pk>/',views.del_employee,name='del_employee'),
 
