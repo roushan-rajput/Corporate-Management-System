@@ -189,7 +189,7 @@ def update_data(req,pk):
         data.save()
 
         send_mail(
-            'Company Updated Details',
+            'Company Details are updated',
             f"""Hello {n},
 
 Your account Details has been Updated.
@@ -240,7 +240,6 @@ def payment(request):
         # amount in paisa
         salary = int(request.POST.get('amount'))
         amount = salary* 100
-        
         print(amount)
         client = razorpay.Client(auth =("rzp_test_SBgtTkwvybHJf0" , "gY3kY8r2vLVW4obdtOE95aVC"))
         # create order
