@@ -227,6 +227,9 @@ def showquery(req):
     queries=Query.objects.all()
     return render(req,'showquery.html',{'queries':queries})
 
+def attendance(req):
+    return render(req,'attendance.html')
+
 def Pay_salary(request,pk):
     emp = employee.objects.get(id=pk)   # ya jo tumhara model hai
     print(emp)

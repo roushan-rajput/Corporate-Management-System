@@ -29,6 +29,7 @@ urlpatterns = [
     path('Reset_data',views.Reset_data,name='Reset_data'),    
     path('empdashboard',views.empdashboard,name='empdashboard'),
     path('admindashboard',views.admindashboard,name='admindashboard'),
+    path('attendance',views.attendance,name='attendance'),
     
 
     path('add_emp/',views.add_emp,name='add_emp'),
