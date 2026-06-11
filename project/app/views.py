@@ -230,6 +230,9 @@ def showquery(req):
 def attendance(req):
     return render(req,'attendance.html')
 
+def leaves(req):
+    return render(req,'leaves.html')
+
 def Pay_salary(request,pk):
     emp = employee.objects.get(id=pk)   # ya jo tumhara model hai
     print(emp)
