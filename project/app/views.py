@@ -84,7 +84,6 @@ def login_data(req):
             return render(req, 'login.html', {'error': 'Email ya Password galat hai'})
 
         
-
 def emp_data(req):
     if req.method == 'POST':
         e  = req.POST.get('empid')
@@ -115,6 +114,7 @@ def emp_data(req):
         # Send email
         send_mail(
             'Company Login Details',
+
             f"""Hello {n},
 
 Your account has been created.
