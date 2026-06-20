@@ -32,6 +32,7 @@ urlpatterns = [
     path('attendance',views.attendance,name='attendance'),
     path('leaves',views.leaves,name='leaves'),
     
+    
 
     path('add_emp/',views.add_emp,name='add_emp'),
     path('emp_data/',views.emp_data,name='emp_data'),

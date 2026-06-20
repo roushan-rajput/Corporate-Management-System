@@ -75,7 +75,6 @@ def login_data(req):
 
         if e == 'roushanrajput12362@gmail.com' and p == '12362':
             return render(req, 'admindashboard.html')
-        # emp = employee.objects.filter(email=e, Password=p).first()
         m= employee.objects.filter(email=e)
         if m :
             req.session['emp_email'] = e               #session me save krne ke liye aise hm use krte h 
