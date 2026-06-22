@@ -33,7 +33,6 @@ urlpatterns = [
     path('leaves',views.leaves,name='leaves'),
     
     
-
     path('add_emp/',views.add_emp,name='add_emp'),
     path('emp_data/',views.emp_data,name='emp_data'),
     path('show_emp/',views.show_emp,name='show_emp'),
@@ -47,7 +46,6 @@ urlpatterns = [
 
     # for Queries
     path('emp_query/',views.emp_query,name='emp_query'),
-
 
     # for payments
     path('payment/',views.payment,name='payment'),

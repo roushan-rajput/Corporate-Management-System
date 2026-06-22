@@ -72,7 +72,6 @@ def login_data(req):
     if req.method == 'POST':
         e = req.POST.get('email')
         p = req.POST.get('pass')
-
         if e == 'roushanrajput12362@gmail.com' and p == '12362':
             return render(req, 'admindashboard.html')
         m= employee.objects.filter(email=e)
@@ -82,7 +81,7 @@ def login_data(req):
         else:
             return render(req, 'login.html', {'error': 'Email ya Password galat hai'})
 
-        
+
 def emp_data(req):
     if req.method == 'POST':
         e  = req.POST.get('empid')
