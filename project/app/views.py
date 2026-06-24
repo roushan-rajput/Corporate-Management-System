@@ -277,9 +277,23 @@ def payment_status(request):
 
         emp= employee.objects.get(order_id=data['razorpay_order_id'])
         emp.razorpay_payment_id = data['razorpay_payment_id']
-        emp.paid = True
-        emp.save()
 
+        emp.paid = True
+        send_mail(
+            'Company Details are updated',
+            f"""Hello {emp},
+Your Salary Was Credited In Your  Bank Account .
+
+Please keep this information safe.
+
+Thank You!!,
+Company Team
+""",
+            'roushanrajput12362@gmail.com',
+            [emp],
+            fail_silently=False
+        )
+        emp.save()
         return render(request, 'showemp.html', {'status': True})
     
     except:
