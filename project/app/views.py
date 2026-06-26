@@ -259,7 +259,9 @@ def payment(request):
     
 @csrf_exempt
 def payment_status(request):
+    em=request.POST.get('empemail')
     if request.method != "POST":
+        
         return render("admindashboard")
 
     client = razorpay.Client(
@@ -277,12 +279,13 @@ def payment_status(request):
 
         emp= employee.objects.get(order_id=data['razorpay_order_id'])
         emp.razorpay_payment_id = data['razorpay_payment_id']
+        
 
         emp.paid = True
         send_mail(
             'Company Details are updated',
-            f"""Hello {emp},
-Your Salary Was Credited In Your  Bank Account .
+            f"""Hello {em},
+Your Salary Was Credited In Your Bank Account .
 
 Please keep this information safe.
 
@@ -290,7 +293,7 @@ Thank You!!,
 Company Team
 """,
             'roushanrajput12362@gmail.com',
-            [emp],
+            [em],
             fail_silently=False
         )
         emp.save()
@@ -301,7 +304,22 @@ Company Team
 
 def del_employee(req,pk):
         userdata=employee.objects.get(id=pk)
+        em=req.POST.get('empemail')
+    
         userdata.delete()
+        send_mail(
+            'From XYZ Company',
+            f"""Hello {em},
+Your Account Was Delected Successfully from XYZ Company.
+All the Best For your Future.
+
+Thank You!!,
+Company Team
+""",
+            'roushanrajput12362@gmail.com',
+            [em],
+            fail_silently=False
+        )
         return render(req,'showemp.html')
 
 def logout(req):
