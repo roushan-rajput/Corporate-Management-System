@@ -209,7 +209,7 @@ Company Team
             fail_silently=False
         )
 
-        return render(req, 'admindashboard.html')
+        return render(req, 'showemp.html')
     
 def emp_query(req):
     if req.method=='POST':
